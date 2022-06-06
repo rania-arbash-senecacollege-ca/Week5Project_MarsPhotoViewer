@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="S22_MarsPhotosReviewer.MainPage">
+<RelativeLayout>
+
+
+    <Label
+        x:Name="title"
+        FontSize="Large"
+        Text="Mars Photo Viewer"
+        HorizontalOptions="Center"
+        RelativeLayout.WidthConstraint="{
+        ConstraintExpression
+        Type=RelativeToParent,
+        Property=Width,
+        Factor=1
+       }"
+
+        RelativeLayout.HeightConstraint="{
+        ConstraintExpression
+         Type=RelativeToParent,
+        Property=Height,Factor=0.1
+        }"
+       
+        RelativeLayout.YConstraint="{ConstraintExpression
+        Type=RelativeToParent, Property=Height,Factor=0.1}"
+        >
+       </Label>
+
+    <Picker
+        x:Name="roverpicker"
+        Title="Select The Rover"
+        SelectedIndexChanged="roverpicker_SelectedIndexChanged"
+         RelativeLayout.WidthConstraint="{
+        ConstraintExpression
+        Type=RelativeToParent,
+        Property=Width,
+        Factor=0.5
+       }"
+        RelativeLayout.XConstraint="{
+        ConstraintExpression
+        Type=RelativeToView,
+        ElementName=datepicker,
+        Property=Y,
+        Factor=1,Constant= 10
+        }"
+
+          RelativeLayout.YConstraint="{ConstraintExpression
+        Type=RelativeToView,
+        ElementName=title,
+        Property=Y,
+        Factor=1,
+        Constant=100
+        }"
+
+
+            />
+    <DatePicker
+        x:Name="datepicker"
+        Date="2005-6-3"
+        MinimumDate="2000-01-01"
+        MaximumDate="2022-06-06"
+        DateSelected="datepicker_DateSelected"
+          RelativeLayout.WidthConstraint="{
+        ConstraintExpression
+        Type=RelativeToParent,
+        Property=Width,
+        Factor=0.5
+       }"
+
+         RelativeLayout.HeightConstraint="{
+        ConstraintExpression
+         Type=RelativeToParent,
+        Property=Height,Factor=0.1
+        }"
+        RelativeLayout.YConstraint="{ConstraintExpression
+        Type=RelativeToView,
+        ElementName=title
+        ,Property=Y,Factor=1,
+        Constant=100
+        }"
+
+        />
+    <Image
+        x:Name="image"
+        BackgroundColor="Gray"
+         RelativeLayout.WidthConstraint="{
+        ConstraintExpression
+        Type=RelativeToParent,
+        Property=Width,
+        Factor=1
+       }"
+
+         RelativeLayout.HeightConstraint="{
+        ConstraintExpression
+         Type=RelativeToParent,
+        Property=Height,Factor=0.4
+        }"
+
+        RelativeLayout.YConstraint="{ConstraintExpression
+        Type=RelativeToView,
+        ElementName=datepicker,
+        Property=Y, Factor=1.5}"
+
+        />
+
+    <Picker
+        x:Name="imagesIDs"
+        Title="Selete Image ID"
+        SelectedIndexChanged="imagesIDs_SelectedIndexChanged"
+           RelativeLayout.WidthConstraint="{
+        ConstraintExpression
+        Type=RelativeToParent,
+        Property=Width,
+        Factor=1
+       }"
+
+            RelativeLayout.HeightConstraint="{
+        ConstraintExpression
+         Type=RelativeToParent,
+        Property=Height,Factor=0.2
+        }"
+
+         RelativeLayout.YConstraint="{ConstraintExpression
+        Type=RelativeToView,
+        ElementName=image,
+        Property=Y, Factor=2.4}"
+        />
+
+</RelativeLayout>
+
+</ContentPage>
